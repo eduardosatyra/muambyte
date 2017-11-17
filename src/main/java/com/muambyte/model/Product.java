@@ -15,7 +15,7 @@ public class Product {
 	private String productName;
 	private String productCategory;
 	private String productDescription;
-	private double productPrice;
+	private float productPrice;
 	private String productCondition;
 	private String productStatus;
 	private int unitInStock;
@@ -49,7 +49,7 @@ public class Product {
 		return productPrice;
 	}
 
-	public void setProductPrice(double productPrice) {
+	public void setProductPrice(float productPrice) {
 		this.productPrice = productPrice;
 	}
 
