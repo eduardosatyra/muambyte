@@ -20,7 +20,7 @@
                     <h3>${product.productName}</h3>
                     <p>${product.productDescription}</p>
                     <p>
-                    	<strong>Fabricante</strong> : ${product.productManufacture}
+                    	<strong>Fabricante</strong> : ${product.productManufacturer}
                     </p>
                     <p>
                     	<strong>Categoria</strong> : ${product.productCategory}
@@ -34,3 +34,4 @@
         </div>
 		
 <%@include file="/WEB-INF/view/template/footer.jsp"%>
+

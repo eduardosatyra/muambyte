@@ -6,9 +6,9 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>All Products</h1>
+            <h1>Página de invetário dos Produtos</h1>
 
-            <p class="lead">Checkout all the awesome products available now!</p>
+            <p class="lead">É isso ai mlk doido!!!!</p>
         </div>
 
         <table class="table table-striped table-hover">
@@ -34,6 +34,8 @@
                 </tr>
             </c:forEach>
         </table>
+        
+        <a href="<c:url value="/admin/inventarioProduto/addProduto" />" class="btn btn-primary" >Adicionar Produto</a>
 
 <%@include file="/WEB-INF/view/template/footer.jsp" %>
 

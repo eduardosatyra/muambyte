@@ -3,6 +3,7 @@ package com.muambyte.controller;
 import java.io.IOException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,8 @@ import com.muambyte.model.Product;
 @Controller
 public class HomeController {
 	
-	private ProductDao productDao = new ProductDao();
+	@Autowired
+	private ProductDao productDao;
 	
 	@RequestMapping("/")
 	public String home() {
@@ -23,7 +25,7 @@ public class HomeController {
 	
 	@RequestMapping("listaDeProdutos")
 	public String getProducts(Model model) {
-		List<Product> products = productDao.getProductList();
+		List<Product> products = productDao.getAllProducts();
 		model.addAttribute("products", products);
 		
 		return "listaDeProdutos";
@@ -37,4 +39,33 @@ public class HomeController {
 		return "detalheProduto";
 		
 	}
+	
+	@RequestMapping("/admin")
+	public String adminPage() {
+		return "admin";
+		
+	}
+	
+	@RequestMapping("/admin/inventarioProduto")
+	public String inventarioProduto(Model model) {
+		List<Product> products = productDao.getAllProducts();
+		model.addAttribute("products", products);
+		
+		return "inventarioProduto";
+	}
+	
+	@RequestMapping("/admin/inventarioProduto/addProduto")
+	public String addProduto(Model model) {
+		Product product = new Product();
+		product.setProductCategory("smartphone");
+		product.setProductCondition("Novo");
+		product.setProductStatus("Ativo");
+		
+		model.addAttribute("product", product);
+		
+		
+		
+		return "addProduto";
+	}
+	
 }
