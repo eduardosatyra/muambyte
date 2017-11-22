@@ -5,7 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -13,98 +15,105 @@ public class Product {
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String productId;
-	private String productName;
-	private String productCategory;
-	private String productDescription;
-	private double productPrice;
-	private String productCondition;
-	private String productStatus;
-	private int unitInStock;
-	private String productManufacturer;
-	
-	@Transient
-	private MultipartFile productImage;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String productId;
 
-	public String getProductName() {
-		return productName;
-	}
+    @NotEmpty (message = "The product name must not be null.")
 
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
+    private String productName;
+    private String productCategory;
+    private String productDescription;
 
-	public String getProductCategory() {
-		return productCategory;
-	}
+    @Min(value = 0, message = "The product price must no be less then zero.")
+    private double productPrice;
+    private String productCondition;
+    private String productStatus;
 
-	public void setProductCategory(String productCategory) {
-		this.productCategory = productCategory;
-	}
+    @Min(value = 0, message = "The product unit must not be less than zero.")
+    private int unitInStock;
+    private String productManufacturer;
 
-	public String getProductDescription() {
-		return productDescription;
-	}
+    @Transient
+    private MultipartFile productImage;
 
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
-	}
+    public String getProductId() {
+        return productId;
+    }
 
-	public double getProductPrice() {
-		return productPrice;
-	}
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
 
-	public void setProductPrice(double productPrice) {
-		this.productPrice = productPrice;
-	}
+    public String getProductName() {
+        return productName;
+    }
 
-	public String getProductStatus() {
-		return productStatus;
-	}
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
-	public void setProductStatus(String productStatus) {
-		this.productStatus = productStatus;
-	}
+    public String getProductCategory() {
+        return productCategory;
+    }
 
-	public int getUnitInStock() {
-		return unitInStock;
-	}
+    public void setProductCategory(String productCategory) {
+        this.productCategory = productCategory;
+    }
 
-	public void setUnitInStock(int unitInStock) {
-		this.unitInStock = unitInStock;
-	}
+    public String getProductDescription() {
+        return productDescription;
+    }
 
-	public String getProductManufacturer() {
-		return productManufacturer;
-	}
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
+    }
 
-	public void setProductManufacturer(String productManufacturer) {
-		this.productManufacturer = productManufacturer;
-	}
+    public double getProductPrice() {
+        return productPrice;
+    }
 
-	public String getProductCondition() {
-		return productCondition;
-	}
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
+    }
 
-	public void setProductCondition(String productCondition) {
-		this.productCondition = productCondition;
-	}
+    public String getProductCondition() {
+        return productCondition;
+    }
 
-	public String getProductId() {
-		return productId;
-	}
+    public void setProductCondition(String productCondition) {
+        this.productCondition = productCondition;
+    }
 
-	public void setProductId(String productId) {
-		this.productId = productId;
-	}
+    public String getProductStatus() {
+        return productStatus;
+    }
 
-	public MultipartFile getProductImage() {
-		return productImage;
-	}
+    public void setProductStatus(String productStatus) {
+        this.productStatus = productStatus;
+    }
 
-	public void setProductImage(MultipartFile productImage) {
-		this.productImage = productImage;
-	}
+    public int getUnitInStock() {
+        return unitInStock;
+    }
+
+    public void setUnitInStock(int unitInStock) {
+        this.unitInStock = unitInStock;
+    }
+
+    public String getProductManufacturer() {
+        return productManufacturer;
+    }
+
+    public void setProductManufacturer(String productManufacturer) {
+        this.productManufacturer = productManufacturer;
+    }
+
+    public MultipartFile getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
+    }
 
 }
