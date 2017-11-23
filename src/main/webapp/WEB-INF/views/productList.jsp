@@ -6,19 +6,19 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>All Products</h1>
+            <h1>Todos os produtos</h1>
 
-            <p class="lead">Checkout all the awesome products available now!</p>
+            <p class="lead">Veja todos os incríveis produtos disponíveis agora!</p>
         </div>
 
         <table class="table table-striped table-hover">
             <thead>
             <tr class="bg-success">
-                <th>Photo Thumb</th>
-                <th>Product Name</th>
-                <th>Category</th>
-                <th>Condition</th>
-                <th>Price</th>
+                <th>Mini foto</th>
+                <th>Nome Produto</th>
+                <th>Categoria</th>
+                <th>Condição</th>
+                <th>Preço</th>
                 <th></th>
             </tr>
             </thead>

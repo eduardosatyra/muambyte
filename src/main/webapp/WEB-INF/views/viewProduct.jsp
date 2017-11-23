@@ -1,13 +1,14 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 
 
 <div class="container-wrapper">
 	<div class="container">
 		<div class="page-header">
-			<h1>Product Detail</h1>
+			<h1>Detalhes do Produto</h1>
 
-			<p class="lead">Here is the detail information of the product!</p>
+			<p class="lead">Aqui estão os detalhes dos Produtos!</p>
 		</div>
 
 		<div class="container" ng-app="cartApp">
@@ -22,15 +23,15 @@
 					<h3>${product.productName}</h3>
 					<p>${product.productDescription}</p>
 					<p>
-						<strong>Manufacturer</strong> : ${product.productManufacturer}
+						<strong>Fabricante</strong> : ${product.productManufacturer}
 					</p>
 					<p>
-						<strong>Category</strong> : ${product.productCategory}
+						<strong>Categoria</strong> : ${product.productCategory}
 					</p>
 					<p>
-						<strong>Condition</strong> : ${product.productCondition}
+						<strong>Condição</strong> : ${product.productCondition}
 					</p>
-					<h4>${product.productPrice}USD</h4>
+					<h4>${product.productPrice}0 R$</h4>
 
 					<br>
 
@@ -41,12 +42,13 @@
 					</c:if>
 
 					<p ng-controller="cartCtrl">
-						<a href="<c:url value="${url}" />" class="btn btn-default">Back</a>
+						<a href="<c:url value="${url}" />" class="btn btn-default">Voltar</a>
 						<a href="#" class="btn btn-warning btn-large"
 							ng-click="addToCart('${product.productId}')"><span
-							class="glyphicon glyphicon-shopping-cart"></span>Order Now</a> <a
-							href="<spring:url value="/cart" />" class="btn btn-default"><span
-							class="glyphicon glyphicon-hand-right"></span>View Cart</a>
+							class="glyphicon glyphicon-shopping-cart"></span>Adicionar ao
+							Carrinho</a> <a href="<spring:url value="/cart" />"
+							class="btn btn-default">
+							<span class="glyphicon glyphicon-hand-right"></span>Ver o que comprou</a>
 					</p>
 				</div>
 			</div>
@@ -55,4 +57,3 @@
 
 		<script src="<c:url value="/resources/js/controller.js" /> "></script>
 		<%@include file="/WEB-INF/views/template/footer.jsp"%>
-		

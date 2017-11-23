@@ -19,10 +19,9 @@
 
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Welcome to Le's Music Store</h1>
+                    <h1>Bem vindo Madeira</h1>
 
-                    <p>Here you can browse and buy Instruments, Records and music related Accessories. Order Now for
-                        Your Amazing New Kit!</p>
+                    <p>Existem muitos textos aleatorios Here!!</p>
 
                 </div>
             </div>

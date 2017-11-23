@@ -18,9 +18,8 @@ cartApp.controller("cartCtrl", function ($scope, $http){
     };
 
     $scope.addToCart = function (productId) {
-        $http.put('/muambyte/rest/cart/add/'+productId).success(function (data) {
-            $scope.refreshCart($http.get('/muambyte/rest/cart/cartId'));
-            alert("Produto adicionado no carrinho!!")
+        $http.put('/muambyte/rest/cart/add/'+productId).success(function () {
+            alert("Product successfully added to the cart!")
         });
     };
 

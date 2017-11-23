@@ -6,9 +6,9 @@
         <section>
             <div class="jumbotron">
                 <div class="container">
-                    <h1>Cart</h1>
+                    <h1>Seu carrinho de compras</h1>
 
-                    <p>All the selected products in your shopping cart</p>
+                    <p>Todos os produtos selecionados em seu carrinho de compras</p>
                 </div>
             </div>
         </section>
@@ -17,16 +17,16 @@
             <div ng-controller = "cartCtrl" ng-init="initCartId('${cartId}')">
             <div>
                 <a class="btn btn-danger pull-left" ng-click="clearCart()"><span
-                        class="glyphicon glyphicon-remove-sign"></span>Clear Cart</a>
+                        class="glyphicon glyphicon-remove-sign"></span>Limpar Carrinho</a>
             </div>
 
             <table class="table table-hover">
                 <tr>
-                    <th>Product</th>
-                    <th>Unit Price</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Action</th>
+                    <th>Produto</th>
+                    <th>Preço unitário</th>
+                    <th>Quantidade </th>
+                    <th>Preço</th>
+                    <th>Ação</th>
                 </tr>
                 <tr ng-repeat = "item in cart.cartItems">
                     <td>{{item.product.productName}}</td>
@@ -34,12 +34,12 @@
                     <td>{{item.quantity}}</td>
                     <td>{{item.totalPrice}}</td>
                     <td><a href="#" class="label label-danger" ng-click="removeFromCart(item.product.productId)">
-                        <span class="glyphicon glyphicon-remove"></span>remove</a></td>
+                        <span class="glyphicon glyphicon-remove"></span>Remover</a></td>
                 </tr>
                 <tr>
                     <th></th>
                     <th></th>
-                    <th>Grand Total</th>
+                    <th>Preço Total</th>
                     <th>{{cart.grandTotal}}</th>
                     <th></th>
                 </tr>

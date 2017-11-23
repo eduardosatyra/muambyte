@@ -5,9 +5,9 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Edit Product</h1>
+            <h1>Editar Produto</h1>
 
-            <p class="lead">Please update the product information here:</p>
+            <p class="lead">Por favor preencher abaixo:</p>
         </div>
 
         <form:form action="${pageContext.request.contextPath}/admin/productInventory/editProduct?${_csrf.parameterName}=${_csrf.token}" method="post"
@@ -15,64 +15,64 @@
         <form:hidden path="productId" value="${product.productId}" />
 
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Nome:</label>
             <form:input path="productName" id="name" class="form-Control" value="${product.productName}"/>
         </div>
 
         <div class="form-group">
-            <label for="category">Category</label>
+            <label for="category">Caregoria:</label>
             <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="instrument" />Instrument</label>
+                                                             value="instrument" />Smartphone</label>
             <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="record" />Record</label>
+                                                             value="record" />Computadores</label>
             <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category"
-                                                             value="accessory" />Accessory</label>
+                                                             value="accessory" />Eletrodomesticos</label>
         </div>
 
         <div class="form-group">
-            <label for="description">Description</label>
+            <label for="description">Descrição</label>
             <form:textarea path="productDescription" id="description" class="form-Control" value="${product.productDescription}"/>
         </div>
 
         <div class="form-group">
-            <label for="price">Price</label>
+            <label for="price">Preço</label>
             <form:input path="productPrice" id="price" class="form-Control" value="${product.productPrice}"/>
         </div>
 
         <div class="form-group">
-            <label for="condition">Condition</label>
+            <label for="condition">Condição</label>
             <label class="checkbox-inline"><form:radiobutton path="productCondition" id="condition"
-                                                             value="new" />New</label>
+                                                             value="new" />Novo</label>
             <label class="checkbox-inline"><form:radiobutton path="productCondition" id="condition"
-                                                             value="used" />Used</label>
+                                                             value="used" />Usado</label>
         </div>
 
         <div class="form-group">
             <label for="status">Status</label>
             <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status"
-                                                             value="active" />Active</label>
+                                                             value="active" />Ativo</label>
             <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status"
-                                                             value="inactive" />Inactive</label>
+                                                             value="inactive" />Inativo</label>
         </div>
 
         <div class="form-group">
-            <label for="unitInStock">Unit In Stock</label>
+            <label for="unitInStock">Unidades em estoque</label>
             <form:input path="unitInStock" id="unitInStock" class="form-Control" value="${product.unitInStock}"/>
         </div>
 
         <div class="form-group">
-            <label for="manufacturer">Manufacturer</label>
+            <label for="manufacturer">Fabricante</label>
             <form:input path="productManufacturer" id="manufacturer" class="form-Control" value="${product.productManufacturer}"/>
         </div>
 
         <div class="form-group">
-            <label class="control-label" for="productImage">Upload Picture</label>
+            <label class="control-label" for="productImage">Carregar imagem (n ta funcionando)</label>
             <form:input id="productImage" path="productImage" type="file" class="form:input-large" />
         </div>
 
         <br><br>
-        <input type="submit" value="submit" class="btn btn-default">
-        <a href="<c:url value="/admin/productInventory" />" class="btn btn-default">Cancel</a>
+        <input type="submit" value="Salvar edição" class="btn btn-default">
+        <a href="<c:url value="/admin/productInventory" />" class="btn btn-default">Cancelar</a>
         </form:form>
 
 

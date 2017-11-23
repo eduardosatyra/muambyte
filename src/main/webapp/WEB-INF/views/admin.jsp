@@ -12,23 +12,23 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Administrator page</h1>
+            <h1>Página de administração</h1>
 
-            <p class="lead">This is the administrator page!</p>
+            <p class="lead">Essa e a página de admin!</p>
         </div>
         
         <c:if test="${pageContext.request.userPrincipal.name != null}">
             <h2>
-                Welcome: ${pageContext.request.userPrincipal.name} | <a href="<c:url
+                Bem Vindo: ${pageContext.request.userPrincipal.name} | <a href="<c:url
                 value="/login?logout" />">Logout</a>
             </h2>
         </c:if>
 
         <h3>
-            <a href="<c:url value="/admin/productInventory" />" >Product Inventory</a>
+            <a href="<c:url value="/admin/productInventory" />" >Inventário de Produtos</a>
         </h3>
 
-        <p>Here you can view, check and modify the product inventory!</p>
+        <p>Aqui você pode ver, verificar e modificar o inventário do produto!</p>
 
 
         <%@include file="/WEB-INF/views/template/footer.jsp" %>
